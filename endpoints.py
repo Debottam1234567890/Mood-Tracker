@@ -274,7 +274,7 @@ HOME_TEMPLATE = '''
     <title>MoodMate - Home</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
+        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
@@ -296,6 +296,7 @@ HOME_TEMPLATE = '''
             gap: 20px;
             justify-content: center;
             margin-bottom: 40px;
+            flex-wrap: wrap;
         }
         .nav a {
             padding: 12px 30px;
@@ -312,6 +313,104 @@ HOME_TEMPLATE = '''
             border-radius: 20px;
             padding: 30px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .card h3 {
+            color: #764ba2;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        .card p {
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .info-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+        }
+        .info-box h4 {
+            color: #667eea;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+        }
+        .info-box p {
+            font-size: 0.95em;
+            color: #555;
+        }
+        .stat {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .stat-label {
+            font-size: 1em;
+            opacity: 0.9;
+        }
+        .benefits-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .benefits-list li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.6;
+        }
+        .benefits-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        .warning-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .warning-box h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+        .cta-button:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -321,14 +420,165 @@ HOME_TEMPLATE = '''
             <h1>🌟 MoodMate</h1>
             <p>Your Personal Emotional Wellbeing Companion</p>
         </div>
+        
         <div class="nav">
             <a href="/">Home</a>
             <a href="/tracker">Mood Tracker</a>
             <a href="/chatbot">Chat with MoodMate</a>
         </div>
+        
         <div class="card">
             <h2>Welcome to MoodMate!</h2>
-            <p>Track your moods, chat with our AI companion, and improve your emotional wellbeing.</p>
+            <p>Track your moods, chat with our AI companion, and improve your emotional wellbeing through evidence-based mood monitoring and support.</p>
+            <a href="/tracker" class="cta-button">Start Tracking Your Mood</a>
+        </div>
+
+        <div class="card">
+            <h2>📊 Why Mood Tracking Matters</h2>
+            <p>Research shows that understanding and managing your emotions is crucial for overall mental health and quality of life. Mood tracking helps you identify patterns, triggers, and connections between your daily activities and emotional states.</p>
+            
+            <div class="grid">
+                <div class="stat">
+                    <div class="stat-number">64%</div>
+                    <div class="stat-label">of people report improved self-awareness through mood tracking</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">3x</div>
+                    <div class="stat-label">more likely to identify mood triggers with consistent tracking</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">70%</div>
+                    <div class="stat-label">of therapists recommend mood journaling to clients</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🌈 The Science of Good Moods</h2>
+            <p>Positive emotional states aren't just pleasant—they're essential for your physical and mental health. Research demonstrates significant benefits of maintaining good moods:</p>
+            
+            <ul class="benefits-list">
+                <li><strong>Enhanced Immune Function:</strong> Positive emotions boost immune response and help fight off illness</li>
+                <li><strong>Better Cardiovascular Health:</strong> Good moods reduce stress hormones and lower blood pressure</li>
+                <li><strong>Improved Cognitive Performance:</strong> Positive emotions enhance creativity, problem-solving, and decision-making</li>
+                <li><strong>Stronger Relationships:</strong> Good moods increase empathy and improve social connections</li>
+                <li><strong>Increased Resilience:</strong> Positive emotions help you bounce back from adversity more quickly</li>
+                <li><strong>Longer Lifespan:</strong> Studies show optimistic people live an average of 7-10 years longer</li>
+                <li><strong>Better Sleep Quality:</strong> Positive emotional states promote deeper, more restorative sleep</li>
+            </ul>
+
+            <h3>What Creates Good Moods?</h3>
+            <div class="grid">
+                <div class="info-box">
+                    <h4>🏃 Physical Activity</h4>
+                    <p>Exercise releases endorphins and reduces cortisol, creating natural mood elevation that can last for hours.</p>
+                </div>
+                <div class="info-box">
+                    <h4>🤝 Social Connection</h4>
+                    <p>Meaningful interactions trigger oxytocin release, promoting feelings of trust and contentment.</p>
+                </div>
+                <div class="info-box">
+                    <h4>😴 Quality Sleep</h4>
+                    <p>7-9 hours of good sleep regulates neurotransmitters essential for emotional stability.</p>
+                </div>
+                <div class="info-box">
+                    <h4>🎯 Purpose & Achievement</h4>
+                    <p>Accomplishing goals activates dopamine pathways, creating satisfaction and motivation.</p>
+                </div>
+                <div class="info-box">
+                    <h4>🧘 Mindfulness Practices</h4>
+                    <p>Meditation and deep breathing activate the parasympathetic nervous system, reducing stress.</p>
+                </div>
+                <div class="info-box">
+                    <h4>🌞 Sunlight Exposure</h4>
+                    <p>Natural light regulates circadian rhythms and boosts serotonin production.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>⚠️ Understanding Negative Moods</h2>
+            <p>While occasional negative emotions are normal and even healthy, persistent bad moods can significantly impact your wellbeing. Understanding them is the first step to managing them effectively.</p>
+
+            <h3>The Impact of Prolonged Negative Moods</h3>
+            <ul class="benefits-list">
+                <li><strong>Physical Health Decline:</strong> Chronic stress weakens immune function and increases inflammation</li>
+                <li><strong>Cognitive Impairment:</strong> Persistent negative moods can impair memory, concentration, and decision-making</li>
+                <li><strong>Relationship Strain:</strong> Irritability and withdrawal can damage important social connections</li>
+                <li><strong>Sleep Disruption:</strong> Anxiety and rumination interfere with sleep quality and duration</li>
+                <li><strong>Reduced Productivity:</strong> Low motivation and energy make daily tasks feel overwhelming</li>
+                <li><strong>Increased Risk of Mental Health Conditions:</strong> Untreated mood problems can develop into depression or anxiety disorders</li>
+            </ul>
+
+            <h3>Common Triggers of Negative Moods</h3>
+            <div class="grid">
+                <div class="info-box">
+                    <h4>😰 Chronic Stress</h4>
+                    <p>Ongoing pressures from work, finances, or relationships elevate cortisol levels persistently.</p>
+                </div>
+                <div class="info-box">
+                    <h4>😴 Sleep Deprivation</h4>
+                    <p>Less than 7 hours of sleep disrupts emotional regulation and increases irritability.</p>
+                </div>
+                <div class="info-box">
+                    <h4>🍔 Poor Nutrition</h4>
+                    <p>Processed foods and blood sugar fluctuations affect neurotransmitter production.</p>
+                </div>
+                <div class="info-box">
+                    <h4>🏠 Social Isolation</h4>
+                    <p>Lack of meaningful connection triggers loneliness and can worsen mood disorders.</p>
+                </div>
+                <div class="info-box">
+                    <h4>📱 Digital Overload</h4>
+                    <p>Excessive screen time and social media use are linked to increased anxiety and depression.</p>
+                </div>
+                <div class="info-box">
+                    <h4>🎭 Unresolved Trauma</h4>
+                    <p>Past experiences can continue affecting mood without proper processing and support.</p>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚕️ When to Seek Professional Help</h4>
+                <p>If you experience persistent low mood for more than two weeks, thoughts of self-harm, inability to perform daily activities, or significant changes in appetite or sleep, please reach out to a mental health professional. MoodMate is a supportive tool but not a replacement for professional care.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🎯 How MoodMate Helps</h2>
+            <p>MoodMate combines evidence-based mood tracking with AI-powered support to help you understand and improve your emotional wellbeing:</p>
+            
+            <div class="grid">
+                <div class="info-box">
+                    <h4>📈 Pattern Recognition</h4>
+                    <p>Identify recurring mood patterns and their connections to activities, sleep, and other factors in your life.</p>
+                </div>
+                <div class="info-box">
+                    <h4>🎯 Trigger Awareness</h4>
+                    <p>Discover what situations, people, or circumstances impact your mood most significantly.</p>
+                </div>
+                <div class="info-box">
+                    <h4>💬 24/7 Support</h4>
+                    <p>Chat with our AI companion anytime for emotional support and evidence-based coping strategies.</p>
+                </div>
+                <div class="info-box">
+                    <h4>📊 Visual Insights</h4>
+                    <p>See your emotional journey through clear charts and graphs that reveal trends over time.</p>
+                </div>
+                <div class="info-box">
+                    <h4>🎓 Psychoeducation</h4>
+                    <p>Learn about emotional regulation, mental health, and effective coping techniques.</p>
+                </div>
+                <div class="info-box">
+                    <h4>🔐 Privacy First</h4>
+                    <p>Your mood data and conversations are private and secure, empowering honest self-reflection.</p>
+                </div>
+            </div>
+
+            <h3>Research-Backed Approach</h3>
+            <p>MoodMate is built on principles from cognitive-behavioral therapy (CBT), positive psychology, and emotion-focused therapy. Studies show that regular mood tracking combined with supportive interventions can reduce symptoms of anxiety and depression by 30-40% over 8-12 weeks.</p>
+            
+            <a href="/tracker" class="cta-button">Begin Your Journey Today</a>
         </div>
     </div>
 </body>
